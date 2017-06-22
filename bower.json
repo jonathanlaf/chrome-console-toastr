@@ -1,0 +1,26 @@
+{
+  "name": "toastr",
+  "description": "Add Toastr notifications in browser and intercept console messages and show them in toastr.",
+  "main": "dist/app.js",
+  "authors": [
+    "Jonathan Lafleur"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "chrome-plugin",
+    "console",
+    "toastr"
+  ],
+  "homepage": "https://github.com/jonathanlaf/chrome-console-toastr#readme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "toastr": "^2.1.3"
+  }
+}
