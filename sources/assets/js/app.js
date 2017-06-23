@@ -1,16 +1,23 @@
-console.log(chrome);
+/*
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["app.js"],
+      "css": ["app.css"],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+*/
+chrome.tabs.executeScript(null,{code:InterceptConsole()});
 
-//chrome.tabs.executeScript(null,{code:someFunction()});
+function InterceptConsole() {
+	var oldLog = console.log;
 
+	console.log = function (message) {
+		alert(message);
+		oldLog.apply(console, arguments);
+	};
 
-function someFunction() {
-    var oldLog = console.log;
-    console.log = function (message) {
-        alert(message);
-        oldLog.apply(console, arguments);
-    };
-
-    console.log('In');
+	console.log('Un test');
 }
-
-console.log('Out');
